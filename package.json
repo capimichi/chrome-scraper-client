@@ -1,11 +1,32 @@
 {
   "devDependencies": {
+    "autoprefixer": "^10.4.17",
     "copy-webpack-plugin": "^12.0.2",
+    "postcss": "^8.4.35",
+    "postcss-loader": "^8.1.0",
+    "tailwindcss": "^3.4.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "vue-loader": "^17.3.1",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "build": "webpack",
     "build:dev": "webpack --mode development"
+  },
+  "dependencies": {
+    "@enhavo/dependency-injection": "^0.13.4",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@vue/compiler-sfc": "^3.4.19",
+    "css-loader": "^6.10.0",
+    "lodash": "^4.17.21",
+    "postcss-preset-env": "^9.4.0",
+    "reflect-metadata": "^0.2.1",
+    "style-loader": "^3.3.4",
+    "typedi": "^0.10.0",
+    "vue": "^3.4.19",
+    "vue-router": "^4.3.0"
   }
 }
