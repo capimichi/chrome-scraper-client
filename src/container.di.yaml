@@ -1,0 +1,7 @@
+services:
+  DevToolService:
+    from: './service/DevToolService'
+  DevToolController:
+    from: './controller/DevToolController'
+    arguments:
+      - 'DevToolService'
