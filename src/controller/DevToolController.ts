@@ -1,10 +1,17 @@
-import {Container, Service} from 'typedi';
+import DevToolService from "../service/DevToolService";
 
-@Service()
 class DevToolController {
 
-    constructor(devToolService) {
+    private devToolService: DevToolService;
+
+    constructor(
+        devToolService: DevToolService
+    ) {
         this.devToolService = devToolService;
+    }
+
+    public isConnected(): boolean {
+        return this.devToolService.isConnected();
     }
 }
 
