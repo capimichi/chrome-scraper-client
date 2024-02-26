@@ -2,5 +2,14 @@
   "name": "Chrome Scraper Client",
   "version": "1.0.0",
   "manifest_version": 3,
-  "devtools_page": "devtools/index.html"
+  "devtools_page": "devtools/index.html",
+  "permissions": [
+    "storage",
+    "webRequest",
+    "tabs",
+    "debugger"
+  ],
+  "content_security_policy": {
+    "extension_page": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
 }
