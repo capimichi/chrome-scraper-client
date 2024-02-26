@@ -1,8 +1,8 @@
+
 class DevToolService {
 
-    constructor(
-        private devToolService: DevToolService
-    ) {
+    isConnected(): boolean {
+        return true;
     }
 }
 
