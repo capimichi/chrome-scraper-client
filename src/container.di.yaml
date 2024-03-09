@@ -1,6 +1,19 @@
 services:
+  TaskHandler:
+    from: './handler/TaskHandler'
+  JsonSerializer:
+    from: 'typescript-json-serializer'
+    import: 'JsonSerializer'
+  #    from: '../node_modules/typescript-json-serializer/dist/json-serializer.d.ts'
+  WebSocketClient:
+    from: './client/WebSocketClient'
+    arguments:
+      - 'JsonSerializer'
+      - 'TaskHandler'
   DevToolService:
     from: './service/DevToolService'
+    arguments:
+      - 'WebSocketClient'
   DevToolController:
     from: './controller/DevToolController'
     arguments:
