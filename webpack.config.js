@@ -6,7 +6,9 @@ const {VueLoaderPlugin} = require('vue-loader');
 module.exports = {
     mode: 'production', // 'development' or 'production
     entry: {
-        'devtools/panel': './src/devtools/panel.ts'
+        'devtools/index': './src/devtools/index.ts',
+        'devtools/panel': './src/devtools/panel.ts',
+        'content-script/index': './src/content-script/index.ts',
     },
     output: {
         filename: '[name].js',
