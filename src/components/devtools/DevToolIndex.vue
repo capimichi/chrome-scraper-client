@@ -40,21 +40,31 @@ export default {
     }
   },
   methods: {
-    async connect() {
-      // Your connection logic goes here
-      this.connected = true;
+    async loadDevToolController() {
+      return Container.get("DevToolController").then(devToolController => {
+        this.devToolController = devToolController;
+      });
     },
-    async disconnect() {
+    connect() {
+      let devToolController = this.devToolController;
+      devToolController.connect(this.serverHost);
+      setTimeout(() => {
+        this.updateConnectionStatus();
+      }, 1000);
+    },
+    disconnect() {
       // Your disconnection logic goes here
       this.connected = false;
     },
-    async updateConnectionStatus() {
-      var devToolController = await Container.get("DevToolController");
+    updateConnectionStatus() {
+      let devToolController = this.devToolController;
       this.connected = devToolController.isConnected();
     }
   },
-  async mounted() {
-    await this.updateConnectionStatus();
+  mounted() {
+    this.loadDevToolController().then(() => {
+      this.updateConnectionStatus();
+    });
   }
 }
 </script>
