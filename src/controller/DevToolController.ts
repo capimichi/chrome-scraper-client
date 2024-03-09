@@ -13,6 +13,10 @@ class DevToolController {
     public isConnected(): boolean {
         return this.devToolService.isConnected();
     }
+
+    public connect(url: string): void {
+        this.devToolService.connect(url);
+    }
 }
 
 export default DevToolController;
